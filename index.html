@@ -43,12 +43,38 @@
       padding: 1.5rem;
       text-align: center;
     }
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
+    nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 10px 0;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+nav {
+  display: none;
+  flex-direction: column;
+  background-color: #003366;
+  padding: 20px;
+}
+
+nav.show {
+  display: flex;
+}
+
     section {
       padding: 2rem;
       max-width: 1000px;
@@ -87,18 +113,17 @@
 </head>
 <body>
   <header>
-    <div class="menu-toggle" id="menu-toggle">
-      &#9776;
-    </div>
-    <nav id="sidebar-menu">
-      <ul>
-        <li><a href="#about">Tentang</a></li>
-        <li><a href="#gallery">Galeri</a></li>
-        <li><a href="#contact">Kontak</a></li>
-      </ul>
-    </nav>
-    <h1>ROZÉRO</h1>
-  </header>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav id="main-nav">
+    <ul>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+  <h1>ROZÉRO</h1>
+</header>
+
 
   <main>
     <section id="about">
@@ -132,6 +157,13 @@
       menu.classList.toggle("active");
     });
   </script>
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById("main-nav");
+    nav.classList.toggle("show");
+  }
+</script>
+
   <footer>
     &copy; 2025 ROZÉRO. All rights reserved.
   </footer>
