@@ -113,15 +113,26 @@ nav.show {
 </head>
 <body>
   <header>
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-  <nav id="main-nav">
+<!-- ===== HEADER & SIDEBAR ===== -->
+<header class="topbar">
+  <button id="hamburger" class="hamburger">
+    <!-- 3 garis -->
+    <span></span><span></span><span></span>
+  </button>
+
+  <h1 class="brand">ROZÉRO</h1>
+
+  <!-- sidebar hidden by default -->
+  <nav id="sidebar" class="sidebar">
     <ul>
-      <li><a href="#tentang">Tentang</a></li>
-      <li><a href="#galeri">Galeri</a></li>
-      <li><a href="#kontak">Kontak</a></li>
+      <li><a href="#about"  onclick="closeMenu()">Tentang</a></li>
+      <li><a href="#gallery" onclick="closeMenu()">Galeri</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Kontak</a></li>
     </ul>
   </nav>
-  <h1>ROZÉRO</h1>
+
+  <!-- overlay gelap saat menu aktif -->
+  <div id="overlay" class="overlay" onclick="closeMenu()"></div>
 </header>
 
 
@@ -167,5 +178,23 @@ nav.show {
   <footer>
     &copy; 2025 ROZÉRO. All rights reserved.
   </footer>
+    <script>
+  const hamburger = document.getElementById('hamburger');
+  const sidebar   = document.getElementById('sidebar');
+  const overlay   = document.getElementById('overlay');
+
+  function toggleMenu(){
+    hamburger.classList.toggle('active');
+    sidebar.classList.toggle('show');
+    overlay.classList.toggle('show');
+  }
+  function closeMenu(){
+    hamburger.classList.remove('active');
+    sidebar.classList.remove('show');
+    overlay.classList.remove('show');
+  }
+  hamburger.addEventListener('click',toggleMenu);
+</script>
+
 </body>
 </html>
