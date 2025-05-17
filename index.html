@@ -1,5 +1,3 @@
-
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,17 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ROZÉRO Apparel</title>
   <link rel="stylesheet" href="style.css" />
-  
-  <!-- Untuk tampilan thumbnail dan share -->
+  <link rel="icon" href="icon.png" type="image/png" />
   <meta property="og:title" content="Rozero Apparel">
   <meta property="og:description" content="ROZÉRO adalah brand fashion lokal dengan gaya modern dan nyaman dikenakan siapa saja.">
-  <meta property="og:image" content="https://rozero-site.vercel.app/logo.jpg"> <!-- Ganti URL dengan gambar logo kamu -->
+  <meta property="og:image" content="https://rozero-site.vercel.app/logo.jpg">
   <meta property="og:url" content="https://rozero-site.vercel.app">
   <meta name="twitter:card" content="summary_large_image">
-</head>
-
   <meta name="google-site-verification" content="6kchxkaqn8kMdoWS0NZ8GlCsVOjIlPBewmfb_RGKxIA" />
-
   <link rel="icon" href="icon.png" type="image/png" />
   <script type="application/ld+json">
 {
@@ -27,152 +21,98 @@
   "url": "https://rozero-site.vercel.app",
   "logo": "https://rozero-site.vercel.app/icon.png"
 }
-</script>
-
-
   <style>
-    .hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 20;
-}
-
-.hamburger span {
-  height: 3px;
-  background: white;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
-
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 200px;
-  height: 100%;
-  background-color: #003366;
-  padding: 50px 20px;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
-  transition: left 0.3s ease;
-  z-index: 15;
-}
-
-.sidebar.show {
-  left: 0;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  margin: 20px 0;
-}
-
-.sidebar ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-/* Overlay */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  z-index: 10;
-}
-
-.overlay.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #ffffff;
+      background-color: #fff;
       color: #1a1a1a;
     }
-    header {
+    .topbar {
       background-color: #003366;
-      color: #fff;
-      padding: 1.5rem;
-      text-align: center;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      position: relative;
     }
-    nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav ul li {
-  margin: 10px 0;
-}
-
-.menu-toggle {
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-
-nav {
-  display: none;
-  flex-direction: column;
-  background-color: #003366;
-  padding: 20px;
-}
-
-nav.show {
-  display: flex;
-}
-
-    section {
+    .hamburger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      position: absolute;
+      left: 1rem;
+    }
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: white;
+    }
+    .brand {
+      margin: 0 auto;
+      font-size: 1.5rem;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100vh;
+      background-color: #003366;
+      color: white;
+      padding: 2rem 1rem;
+      transition: left 0.3s ease-in-out;
+      z-index: 1000;
+    }
+    .sidebar.show {
+      left: 0;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar li {
+      margin: 1rem 0;
+    }
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 900;
+    }
+    .overlay.show {
+      display: block;
+    }
+    main {
       padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
     }
-    h2 {
-      color: #003366;
+    section {
+      margin-bottom: 2rem;
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       gap: 1rem;
     }
     .gallery img {
       width: 100%;
-      height: auto;
       border-radius: 8px;
-    }
-    .contact a {
-      display: inline-block;
-      margin: 0.5rem 1rem 0 0;
-      padding: 0.75rem 1.5rem;
-      background-color: #003366;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
     }
     footer {
       background-color: #f0f0f0;
@@ -184,45 +124,35 @@ nav.show {
   </style>
 </head>
 <body>
-  <header>
-<!-- ===== HEADER & SIDEBAR ===== -->
-<header class="topbar">
-  <button id="hamburger" class="hamburger">
-    <!-- 3 garis -->
-    <span></span><span></span><span></span>
-  </button>
+  <header class="topbar">
+    <button id="hamburger" class="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+    <h1 class="brand">ROZÉRO</h1>
+  </header>
 
-  <h1 class="brand">ROZÉRO</h1>
-
-  <!-- sidebar hidden by default -->
   <nav id="sidebar" class="sidebar">
     <ul>
-      <li><a href="#about"  onclick="closeMenu()">Tentang</a></li>
+      <li><a href="#about" onclick="closeMenu()">Tentang</a></li>
       <li><a href="#gallery" onclick="closeMenu()">Galeri</a></li>
       <li><a href="#contact" onclick="closeMenu()">Kontak</a></li>
     </ul>
   </nav>
-
-  <!-- overlay gelap saat menu aktif -->
   <div id="overlay" class="overlay" onclick="closeMenu()"></div>
-</header>
-
 
   <main>
     <section id="about">
       <h2>Tentang Brand</h2>
       <p>ROZÉRO adalah brand fashion lokal yang mengusung gaya streetwear modern dengan fokus pada kenyamanan dan desain yang timeless.</p>
     </section>
-
     <section id="gallery">
       <h2>Galeri Produk</h2>
       <div class="gallery">
-        <img src="produk1.jpg" alt="Kaos Bagian Depan" />
-        <img src="produk2.jpg" alt="Kaos Bagian Belakang v1" />
-        <img src="produk3.jpg" alt="Kaos Bagian Belakang v2" />
+        <img src="produk1.jpg" alt="Kaos Depan">
+        <img src="produk2.jpg" alt="Kaos Belakang v1">
+        <img src="produk3.jpg" alt="Kaos Belakang v2">
       </div>
     </section>
-
     <section id="contact">
       <h2>Kontak Kami</h2>
       <ul>
@@ -234,32 +164,26 @@ nav.show {
     </section>
   </main>
 
-  <script>
-    document.getElementById("hamburger").addEventListener("click", function () {
-      const menu = document.getElementById("sidebar-menu");
-      menu.classList.toggle("active");
-    });
-  </script>
   <footer>
     &copy; 2025 ROZÉRO. All rights reserved.
   </footer>
-    <script>
-  const hamburger = document.getElementById('hamburger');
-  const sidebar   = document.getElementById('sidebar');
-  const overlay   = document.getElementById('overlay');
 
-  function toggleMenu(){
-    hamburger.classList.toggle('active');
-    sidebar.classList.toggle('show');
-    overlay.classList.toggle('show');
-  }
-  function closeMenu(){
-    hamburger.classList.remove('active');
-    sidebar.classList.remove('show');
-    overlay.classList.remove('show');
-  }
-  hamburger.addEventListener('click',toggleMenu);
-</script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
 
+    function toggleMenu() {
+      sidebar.classList.toggle('show');
+      overlay.classList.toggle('show');
+    }
+
+    function closeMenu() {
+      sidebar.classList.remove('show');
+      overlay.classList.remove('show');
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+  </script>
 </body>
 </html>
