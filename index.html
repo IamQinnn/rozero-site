@@ -88,36 +88,53 @@
   <header>
     <h1>ROZÉRO</h1>
     <p>Built to Move, Styled to Last</p>
-    <nav>
-      <a href="#about">Tentang</a>
-      <a href="#gallery">Galeri</a>
-      <a href="#contact">Kontak</a>
+    <body>
+  <header>
+    <div class="menu-toggle" id="menu-toggle">
+      &#9776;
+    </div>
+    <nav id="sidebar-menu">
+      <ul>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#gallery">Galeri</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
     </nav>
+    <h1>ROZÉRO</h1>
   </header>
 
-  <section id="about">
-    <h2>Tentang ROZÉRO</h2>
-    <p>ROZÉRO adalah brand fashion lokal yang mengusung gaya streetwear modern dengan fokus pada kenyamanan dan desain yang timeless. Dengan tagline “Built to Move, Styled to Last,” ROZÉRO hadir untuk generasi muda yang aktif, percaya diri, dan menjadikan fashion sebagai bentuk ekspresi diri.</p>
-  </section>
+  <main>
+    <section id="about">
+      <h2>Tentang Brand</h2>
+      <p>ROZÉRO adalah brand fashion lokal yang mengusung gaya streetwear modern dengan fokus pada kenyamanan dan desain yang timeless.</p>
+    </section>
 
-  <section id="gallery">
-    <h2>Galeri Produk</h2>
-    <div class="gallery">
-      <img src="produk1.jpg" alt="Kaos ROZÉRO">
-      <img src="produk2.jpg" alt="Kaos ROZÉRO">
-      <img src="produk3.jpg" alt="Kaos ROZÉRO">
-    </div>
-  </section>
+    <section id="gallery">
+      <h2>Galeri Produk</h2>
+      <div class="gallery">
+        <img src="images/produk1.jpg" alt="Produk 1" />
+        <img src="images/produk2.jpg" alt="Produk 2" />
+        <img src="images/produk3.jpg" alt="Produk 3" />
+      </div>
+    </section>
 
-  <section id="contact">
-    <h2>Kontak & Toko Online</h2>
-    <div class="contact">
-      <a href="https://shopee.co.id/rozeroapparel" target="_blank">Shopee</a>
-      <a href="https://tiktok.com/@rozeroapparel" target="_blank">TikTok Shop</a>
-      <a href="https://wa.me/6285931033847" target="_blank">WhatsApp</a>
-      <a href="https://instagram.com/rozeroapparel" target="_blank">Instagram</a>
-    </div>
-  </section>
+    <section id="contact">
+      <h2>Kontak Kami</h2>
+      <ul>
+        <li><strong>WhatsApp:</strong> <a href="https://wa.me/6285931033847" target="_blank">0859-3103-3847</a></li>
+        <li><strong>Instagram:</strong> <a href="https://www.instagram.com/rozeroapparel" target="_blank">@rozeroapparel</a></li>
+        <li><strong>Tiktok:</strong> <a href="https://www.tiktok.com/@rozeroapparel" target="_blank">@rozeroapparel</a></li>
+        <li><strong>Shopee:</strong> <a href="https://shopee.co.id/rozeroapparel" target="_blank">rozeroapparel</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      const menu = document.getElementById("sidebar-menu");
+      menu.classList.toggle("active");
+    });
+  </script>
 
   <footer>
     &copy; 2025 ROZÉRO. All rights reserved.
