@@ -20,3 +20,14 @@ function menuBtnChange() {
    closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
  }
 }
+function showPage(page){
+  // sembunyikan semua
+  document.querySelectorAll('.page').forEach(sec=>sec.style.display='none');
+  // tampilkan yg dipilih
+  document.getElementById(page).style.display='block';
+  // ubah judul tengah
+  document.querySelector('.home-section .text').innerText = page.charAt(0).toUpperCase()+page.slice(1);
+  // tutup sidebar (opsional)
+  sidebar.classList.remove('open');
+  menuBtnChange();
+}
