@@ -6,6 +6,11 @@
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
 }
+.logo-img{
+  width:32px;          /* sesuaikan */
+  height:32px;
+  margin-right:6px;
+}
 .sidebar{
   position: fixed;
   left: 0;
