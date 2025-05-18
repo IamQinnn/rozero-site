@@ -1,188 +1,99 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ROZÉRO Apparel</title>
-  <link rel="icon" href="icon.png" type="image/png" />
-  <meta property="og:title" content="Rozero Apparel">
-  <meta property="og:description" content="ROZÉRO adalah brand fashion lokal dengan gaya modern dan nyaman dikenakan siapa saja.">
-  <meta property="og:image" content="https://rozero-site.vercel.app/logo.jpg">
-  <meta property="og:url" content="https://rozero-site.vercel.app">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="google-site-verification" content="6kchxkaqn8kMdoWS0NZ8GlCsVOjIlPBewmfb_RGKxIA" />
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Rozero Apparel",
-  "url": "https://rozero-site.vercel.app",
-  "logo": "https://rozero-site.vercel.app/icon.png"
-}
-  </script>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff;
-      color: #1a1a1a;
-    }
-    .topbar {
-      background-color: #003366;
-      color: white;
-      display: flex;
-      align-items: center;
-      padding: 1rem;
-      position: relative;
-    }
-    .hamburger {
-      background: none;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      position: absolute;
-      left: 1rem;
-    }
-    .hamburger span {
-      display: block;
-      width: 25px;
-      height: 3px;
-      background-color: white;
-    }
-    .brand {
-      margin: 0 auto;
-      font-size: 1.5rem;
-    }
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 250px;
-      height: 100vh;
-      background-color: #003366;
-      color: white;
-      padding: 2rem 1rem;
-      transition: left 0.3s ease-in-out;
-      z-index: 1000;
-    }
-    .sidebar.show {
-      left: 0;
-    }
-    .sidebar ul {
-      list-style: none;
-    }
-    .sidebar li {
-      margin: 1rem 0;
-    }
-    .sidebar a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.5);
-      display: none;
-      z-index: 900;
-    }
-    .overlay.show {
-      display: block;
-    }
-    main {
-      padding: 2rem;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 1rem;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    footer {
-      background-color: #f0f0f0;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-    }
-  </style>
-</head>
-<body>
-  <header class="topbar">
-    <button id="hamburger" class="hamburger">
-      <span></span><span></span><span></span>
-    </button>
-    <h1 class="brand">ROZÉRO</h1>
-  </header>
-
-  <nav id="sidebar" class="sidebar">
-    <ul>
-      <li><a href="#about" onclick="closeMenu()">Tentang</a></li>
-      <li><a href="#gallery" onclick="closeMenu()">Galeri</a></li>
-      <li><a href="#contact" onclick="closeMenu()">Kontak</a></li>
-    </ul>
-  </nav>
-  <div id="overlay" class="overlay" onclick="closeMenu()"></div>
-
-  <main>
-    <section id="about">
-      <h2>Tentang Brand</h2>
-      <p>ROZÉRO adalah brand fashion lokal yang mengusung gaya streetwear modern dengan fokus pada kenyamanan dan desain yang timeless.</p>
-    </section>
-    <section id="gallery">
-      <h2>Galeri Produk</h2>
-      <div class="gallery">
-        <img src="produk1.jpg" alt="Kaos Depan">
-        <img src="produk2.jpg" alt="Kaos Belakang v1">
-        <img src="produk3.jpg" alt="Kaos Belakang v2">
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Responsive Sidebar Menu HTML CSS | CodingNepal</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Boxicons CDN Link -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class="bx bxl-c-plus-plus icon"></i>
+        <div class="logo_name">CodingLab</div>
+        <i class="bx bx-menu" id="btn"></i>
       </div>
-    </section>
-    <section id="contact">
-      <h2>Kontak Kami</h2>
-      <ul>
-        <li><strong>WhatsApp:</strong> <a href="https://wa.me/6285931033847" target="_blank">0859-3103-3847</a></li>
-        <li><strong>Instagram:</strong> <a href="https://www.instagram.com/rozeroapparel" target="_blank">@rozeroapparel</a></li>
-        <li><strong>Tiktok:</strong> <a href="https://www.tiktok.com/@rozeroapparel" target="_blank">@rozeroapparel</a></li>
-        <li><strong>Shopee:</strong> <a href="https://shopee.co.id/rozeroapparel" target="_blank">rozeroapparel</a></li>
+      <ul class="nav-list">
+        <li>
+          <i class="bx bx-search"></i>
+          <input type="text" placeholder="Search..." />
+          <span class="tooltip">Search</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+          <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-user"></i>
+            <span class="links_name">User</span>
+          </a>
+          <span class="tooltip">User</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-chat"></i>
+            <span class="links_name">Messages</span>
+          </a>
+          <span class="tooltip">Messages</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-pie-chart-alt-2"></i>
+            <span class="links_name">Analytics</span>
+          </a>
+          <span class="tooltip">Analytics</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-folder"></i>
+            <span class="links_name">File Manager</span>
+          </a>
+          <span class="tooltip">Files</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-cart-alt"></i>
+            <span class="links_name">Order</span>
+          </a>
+          <span class="tooltip">Order</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-heart"></i>
+            <span class="links_name">Saved</span>
+          </a>
+          <span class="tooltip">Saved</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Setting</span>
+          </a>
+          <span class="tooltip">Setting</span>
+        </li>
+        <li class="profile">
+          <div class="profile-details">
+            <img src="profile.jpg" alt="profileImg" />
+            <div class="name_job">
+              <div class="name">Prem Shahi</div>
+              <div class="job">Web designer</div>
+            </div>
+          </div>
+          <i class="bx bx-log-out" id="log_out"></i>
+        </li>
       </ul>
+    </div>
+    <section class="home-section">
+      <div class="text">Dashboard</div>
     </section>
-  </main>
 
-  <footer>
-    &copy; 2025 ROZÉRO. All rights reserved.
-  </footer>
-
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
-
-    function toggleMenu() {
-      sidebar.classList.toggle('show');
-      overlay.classList.toggle('show');
-    }
-
-    function closeMenu() {
-      sidebar.classList.remove('show');
-      overlay.classList.remove('show');
-    }
-
-    hamburger.addEventListener('click', toggleMenu);
-  </script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
