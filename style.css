@@ -61,8 +61,10 @@
 .sidebar.open .logo-details #btn{
   text-align: right;
 }
-/* SEMBUNYIKAN LOGO KETIKA SIDEBAR CLOSE */
-.sidebar:not(.open) .logo-details > *{
+/* Sembunyikan logo (ikon <i> ATAU gambar) ketika sidebar tertutup */
+.sidebar:not(.open) .logo-details .icon,
+.sidebar:not(.open) .logo-details .logo_name,
+.sidebar:not(.open) .logo-details .logo-img{
   opacity: 0;
   pointer-events: none;
 }
