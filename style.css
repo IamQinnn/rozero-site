@@ -61,6 +61,13 @@
 .sidebar.open .logo-details #btn{
   text-align: right;
 }
+/* SEMBUNYIKAN LOGO KETIKA SIDEBAR CLOSE */
+.sidebar:not(.open) .logo-details .icon,
+.sidebar:not(.open) .logo-details .logo_name{
+  opacity: 0;          /* hilang */
+  pointer-events: none; /* tak bisa diklik */
+}
+
 .sidebar i{
   color: #fff;
   height: 60px;
