@@ -1,49 +1,44 @@
-let sidebar = document.querySelector(".sidebar");
+let sidebar  = document.querySelector(".sidebar");
 let closeBtn = document.querySelector("#btn");
-let searchBtn = document.querySelector(".bx-search");
+let searchBtn= document.querySelector(".bx-search");
 
-closeBtn.addEventListener("click", ()=>{
+// toggle sidebar
+closeBtn.addEventListener("click", toggleSidebar);
+searchBtn.addEventListener("click", toggleSidebar);
+
+function toggleSidebar(){
   sidebar.classList.toggle("open");
-  menuBtnChange();//calling the function(optional)
-});
-
-searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
-  sidebar.classList.toggle("open");
-  menuBtnChange(); //calling the function(optional)
-});
-
-// following are the code to change sidebar button(optional)
-function menuBtnChange() {
- if(sidebar.classList.contains("open")){
-   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
- }else {
-   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
- }
-}
-function showPage(page){
-  // sembunyikan semua
-  document.querySelectorAll('.page').forEach(sec=>sec.style.display='none');
-  // tampilkan yg dipilih
-  document.getElementById(page).style.display='block';
-  // ubah judul tengah
-  document.querySelector('.home-section .text').innerText = page.charAt(0).toUpperCase()+page.slice(1);
-  // tutup sidebar (opsional)
-  sidebar.classList.remove('open');
   menuBtnChange();
 }
-const container = document.querySelector('.home-section');
+
+function menuBtnChange(){
+  if(sidebar.classList.contains("open")){
+    closeBtn.classList.replace("bx-menu","bx-menu-alt-right");
+  }else{
+    closeBtn.classList.replace("bx-menu-alt-right","bx-menu");
+  }
+}
+
+/* ----------  ROUTER SEDERHANA  ---------- */
+const container = document.getElementById('content');           // <–– ganti selector
 document.querySelectorAll('.nav-list a').forEach(link=>{
   link.addEventListener('click', e=>{
     e.preventDefault();
-    loadPage(link.dataset.page);
-    closeMenu();
+    const page = link.dataset.page;
+    loadPage(page);
+    sidebar.classList.remove('open');      // tutup sidebar versi mobile
+    menuBtnChange();
   });
 });
 
 async function loadPage(page){
-  const res = await fetch(`pages/${page}.html`);
-  const html = await res.text();
-  container.innerHTML = html;
+  try{
+    const res  = await fetch(`pages/${page}.html`);
+    const html = await res.text();
+    container.innerHTML = html;
+  }catch(err){
+    container.innerHTML = `<p style="padding:2rem">Halaman <b>${page}</b> tidak ditemukan.</p>`;
+  }
 }
 
 // muat halaman awal
