@@ -6,18 +6,6 @@
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
 }
-.logo-img{
-  width:32px;          /* sesuaikan */
-  height:32px;
-  margin-right:6px;
-}
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1rem auto;
-}
-
 .sidebar{
   position: fixed;
   left: 0;
@@ -32,44 +20,26 @@ img {
 .sidebar.open{
   width: 250px;
 }
-.sidebar .logo-details {
+.sidebar .logo-details{
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* kiri-kanan */
-  padding: 0 1rem;                 /* spasi kanan-kiri */
   position: relative;
-}
-.sidebar .logo-details .logo-img {
-  width: 32px;
-  height: 32px;
-  margin: 0;       /* sudah diatur oleh justify-content */
 }
 .sidebar .logo-details .icon{
   opacity: 0;
   transition: all 0.5s ease;
 }
-.sidebar .logo-details .logo_name {
+.sidebar .logo-details .logo_name{
   color: #fff;
   font-size: 20px;
   font-weight: 600;
-  opacity: 1;      /* selalu nampak */
-  flex: 1;         /* ambil ruang di tengah */
-  text-align: center;
+  opacity: 0;
+  transition: all 0.5s ease;
 }
 .sidebar.open .logo-details .icon,
 .sidebar.open .logo-details .logo_name{
   opacity: 1;
-  padding: 0 1rem;
-}
-/* di style.css, cari .sidebar.open .logo-details */
-.sidebar.open .logo-details {
-  padding: 0 1rem;   /* tambahkan padding kiri & kanan 1rem */
-}
-
-/* kalau masih kurang, atur jarak logo dan tulisan */
-.sidebar.open .logo-details .logo-img {
-  margin-right: 0.20rem;  /* spasi antara ikon dan teks */
 }
 .sidebar .logo-details #btn{
   position: absolute;
@@ -85,13 +55,6 @@ img {
 }
 .sidebar.open .logo-details #btn{
   text-align: right;
-}
-/* Sembunyikan logo (ikon <i> ATAU gambar) ketika sidebar tertutup */
-.sidebar:not(.open) .logo-details .icon,
-.sidebar:not(.open) .logo-details .logo_name,
-.sidebar:not(.open) .logo-details .logo-img{
-  opacity: 0;
-  pointer-events: none;
 }
 .sidebar i{
   color: #fff;
@@ -268,7 +231,6 @@ img {
   width: calc(100% - 78px);
   transition: all 0.5s ease;
   z-index: 2;
-  padding: 1rem;
 }
 .sidebar.open ~ .home-section{
   left: 250px;
