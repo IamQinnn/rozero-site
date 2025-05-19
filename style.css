@@ -32,22 +32,30 @@ img {
 .sidebar.open{
   width: 250px;
 }
-.sidebar .logo-details{
+.sidebar .logo-details {
   height: 60px;
   display: flex;
   align-items: center;
-  position: relative;               
+  justify-content: space-between; /* kiri-kanan */
+  padding: 0 1rem;                 /* spasi kanan-kiri */
+  position: relative;
+}
+.sidebar .logo-details .logo-img {
+  width: 32px;
+  height: 32px;
+  margin: 0;       /* sudah diatur oleh justify-content */
 }
 .sidebar .logo-details .icon{
   opacity: 0;
   transition: all 0.5s ease;
 }
-.sidebar .logo-details .logo_name{
+.sidebar .logo-details .logo_name {
   color: #fff;
   font-size: 20px;
   font-weight: 600;
-  opacity: 0;
-  transition: all 0.5s ease;
+  opacity: 1;      /* selalu nampak */
+  flex: 1;         /* ambil ruang di tengah */
+  text-align: center;
 }
 .sidebar.open .logo-details .icon,
 .sidebar.open .logo-details .logo_name{
@@ -63,17 +71,10 @@ img {
 .sidebar.open .logo-details .logo-img {
   margin-right: 0.75rem;  /* spasi antara ikon dan teks */
 }
-.sidebar .logo-details #btn{
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  font-size: 22px;
-  transition: all 0.4s ease;
+.sidebar .logo-details #btn {
   font-size: 23px;
-  text-align: center;
   cursor: pointer;
-  transition: all 0.5s ease;
+  opacity: 1;      /* selalu nampak */
 }
 .sidebar.open .logo-details #btn{
   text-align: right;
