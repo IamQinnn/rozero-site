@@ -52,6 +52,7 @@ img {
 .sidebar.open .logo-details .icon,
 .sidebar.open .logo-details .logo_name{
   opacity: 1;
+  padding: 0 1rem;
 }
 .sidebar .logo-details #btn{
   position: absolute;
