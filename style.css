@@ -54,6 +54,15 @@ img {
   opacity: 1;
   padding: 0 1rem;
 }
+/* di style.css, cari .sidebar.open .logo-details */
+.sidebar.open .logo-details {
+  padding: 0 1rem;   /* tambahkan padding kiri & kanan 1rem */
+}
+
+/* kalau masih kurang, atur jarak logo dan tulisan */
+.sidebar.open .logo-details .logo-img {
+  margin-right: 0.75rem;  /* spasi antara ikon dan teks */
+}
 .sidebar .logo-details #btn{
   position: absolute;
   top: 50%;
