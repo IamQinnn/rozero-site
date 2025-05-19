@@ -31,3 +31,20 @@ function showPage(page){
   sidebar.classList.remove('open');
   menuBtnChange();
 }
+const container = document.querySelector('.home-section');
+document.querySelectorAll('.nav-list a').forEach(link=>{
+  link.addEventListener('click', e=>{
+    e.preventDefault();
+    loadPage(link.dataset.page);
+    closeMenu();
+  });
+});
+
+async function loadPage(page){
+  const res = await fetch(`pages/${page}.html`);
+  const html = await res.text();
+  container.innerHTML = html;
+}
+
+// muat halaman awal
+loadPage('dashboard');
