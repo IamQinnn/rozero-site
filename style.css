@@ -11,6 +11,13 @@
   height:32px;
   margin-right:6px;
 }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
 .sidebar{
   position: fixed;
   left: 0;
